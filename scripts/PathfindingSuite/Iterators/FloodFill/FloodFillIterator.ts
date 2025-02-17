@@ -206,7 +206,7 @@ export class FloodFillIterator {
      * the adjacent block could be a "jump" up from the current fromBlock Y axis - or a jump down. Both would only happen if it is safe and the block could be
      * jumped onto or fallen safely from.
      */
-    public *IterateAdjacentPassableBlocks(fromBlock: Block){
+    public *IterateAdjacentPassableBlocks(fromBlock: Block): Generator<Block | null, void, void>{
         const fromBlockLocation: Vector3 = fromBlock.location;
         const adjacentPositions: Vector3[] = [
             {x: fromBlockLocation.x + 1, y: fromBlockLocation.y, z: fromBlockLocation.z},

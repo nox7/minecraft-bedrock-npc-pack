@@ -1,11 +1,12 @@
-import { Block, Player, Vector3 } from "@minecraft/server";
+import { Block, BlockVolume, ListBlockVolume, Player, system, Vector3 } from "@minecraft/server";
 import { EmptySpaceFinder } from "../Utilities/EmptySpaceFinder";
 import { CuboidRegion } from "../PathfindingSuite/Region/CuboidRegion";
 import { Woodcutter } from "../NPCs/Woodcutter";
 import { TryGetBlock } from "../Utilities/TryGetBlock";
 import { NPCHandler } from "../NPCHandler";
 import { ModalFormData } from "@minecraft/server-ui";
-import { Vector3Utils } from "@minecraft/math";
+import { Vector3Builder, Vector3Utils } from "@minecraft/math";
+import { MinecraftBlockTypes } from "@minecraft/vanilla-data";
 
 export class WoodcutterManagerBlock{
 
@@ -119,25 +120,42 @@ export class WoodcutterManagerBlock{
     /**
      * Finds a chest that is adjacent to this manager block, if there is one
      */
-    public GetAdjacentChest(): Block | null{
+    public async GetAdjacentChest(): Promise<Block | null>{
 
         // Block isn't loaded in
         if (!this.Block.isValid){
             return null;
         }
 
-        // Vertically flat
-        const cuboidRegionAroundSpawn: CuboidRegion = CuboidRegion.FromCenterLocation(this.Block.location, 1, true);
-        const locations: Vector3[] = cuboidRegionAroundSpawn.GetAllLocationsInRegion();
-        for (const location of locations){
-            const block: Block | undefined = TryGetBlock(this.Block.dimension, location);
-            if (block !== undefined){
-                if (block.typeId === "minecraft:chest"){
-                    return block;
-                }
-            }
-        }
+        const listOfBlocks: ListBlockVolume = this.Block.dimension.getBlocks(
+            new BlockVolume(
+                new Vector3Builder(this.Block.location).subtract(new Vector3Builder(1, 0, 1)),
+                new Vector3Builder(this.Block.location).add(new Vector3Builder(1, 0, 1))
+            ),
+            {
+                includeTypes: [MinecraftBlockTypes.Chest]
+            },
+            true
+        );
 
-        return null;
+        return await new Promise<Block | null>(resolve => {
+            const blockDimension = this.Block.dimension;
+            system.runJob(function*(){
+                for (const location of listOfBlocks.getBlockLocationIterator()){
+                    const block: Block | undefined = TryGetBlock(blockDimension, location);
+                    if (block !== undefined){
+                        if (block.typeId === "minecraft:chest"){
+                            resolve(block);
+                            return;
+                        }
+                    }
+
+                    yield;
+                }
+
+                resolve(null);
+                return;
+            }());
+        });
     }
 }

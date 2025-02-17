@@ -914,7 +914,7 @@ export class Woodcutter extends NPC{
      */
     public async OnStateChangedToWalkingToChest(): Promise<void>{
         Debug.Info("Woodcutter state changed to WalkingToChest.");
-        const chestToWalkTo: Block | null = this.WoodcutterManagerBlock!.GetAdjacentChest();
+        const chestToWalkTo: Block | null = await this.WoodcutterManagerBlock!.GetAdjacentChest();
         if (chestToWalkTo !== null){
             if (this.Entity !== null){
                 if (this.Entity.isValid){

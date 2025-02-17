@@ -1,5 +1,5 @@
 {
-    "format_version": "1.21.60",
+    "format_version": "1.21.50",
     "minecraft:block": {
         "description": {
             "identifier": "nox:woodcutter-manager",
@@ -14,11 +14,11 @@
                 "identifier": "geometry.nox.woodcutter-manager"
             },
             "minecraft:destructible_by_mining":{
-                "seconds_to_destroy": 1.0,
+                "seconds_to_destroy": 3.0,
                 "item_specific_speeds": [
                     {
                         "item": { "tags" : "q.any_tag('minecraft:is_axe')"},
-                        "destroy_speed": 0.25
+                        "destroy_speed": 1.0
                     }
                 ]
             },
