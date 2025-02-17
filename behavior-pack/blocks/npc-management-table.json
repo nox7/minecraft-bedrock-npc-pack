@@ -1,5 +1,5 @@
 {
-    "format_version": "1.20.50",
+    "format_version": "1.21.60",
     "minecraft:block": {
         "description": {
             "identifier": "nox:npc-management-table",
@@ -47,11 +47,17 @@
             }
         ],
         "components": {
-            "minecraft:destructible_by_mining":{
-                "seconds_to_destroy": 2
-            },
             "minecraft:geometry":{
                 "identifier": "geometry.nox.npc-management-table"
+            },
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 1.0,
+                "item_specific_speeds": [
+                    {
+                        "item": { "tags" : "q.any_tag('minecraft:is_axe')"},
+                        "destroy_speed": 0.25
+                    }
+                ]
             },
             "minecraft:crafting_table": {
                 "crafting_tags": ["nox:npc-management-table"],
