@@ -379,6 +379,10 @@ export class Woodcutter extends NPC{
 
             // Set the state (will set the Entity property nox:state_enum) to the currently loaded state in memory
             this.SetState(this.State);
+
+            // Initialize the dialog for the woodcutter
+            this.Entity.setProperty("nox:dialog_initiated", true);
+            this.InitDialog();
         }
     }
 
