@@ -1,0 +1,107 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "nox:woodcutter",
+            "is_spawnable": false,
+            "is_summonable": true,
+            "properties": {
+                "nox:id":{
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,25000],
+                    "client_sync": true
+                },
+                "nox:dialog_initiated": {
+                    "type": "bool",
+                    "default": false
+                },
+                "nox:state_enum": {
+                    "type": "enum",
+                    "default": "NONE",
+                    "values": [
+                        "NONE",
+                        "SEARCHING",
+                        "WALKING_TO_WOOD",
+                        "WOODCUTTING",
+                        "WALKING_TO_CHEST",
+                        "DEPOSITING_WOOD"
+                    ],
+                    "client_sync": true
+                },
+                "nox:woodcutter_manager_block_location_x": {
+                    "type": "float",
+                    "default": 0.0,
+                    "range": [-29999984.0, 29999984.0],
+                    "client_sync": true
+                },
+                "nox:woodcutter_manager_block_location_y": {
+                    "type": "float",
+                    "default": 0.0,
+                    "range": [-29999984.0, 29999984.0],
+                    "client_sync": true
+                },
+                "nox:woodcutter_manager_block_location_z": {
+                    "type": "float",
+                    "default": 0.0,
+                    "range": [-29999984.0, 29999984.0],
+                    "client_sync": true
+                },
+                "nox:woodcutter_search_distance": {
+                    "type": "int",
+                    "default": 10,
+                    "range": [5, 20],
+                    "client_sync": false
+                },
+                "nox:is_chopping":{
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+                "nox:is_moving":{
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": true
+                },
+                "nox:woodcutter_strips_logs":{
+                    "type": "bool",
+                    "default": false,
+                    "client_sync": false
+                },
+                "nox:is_enabled":{
+                    "type": "bool",
+                    "default": true,
+                    "client_sync": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:npc": {
+                "npc_data": {
+                    
+                }
+            },
+            "minecraft:physics": {},
+            "minecraft:damage_sensor": {
+                "triggers": [
+                    {
+                        "cause": "all",
+                        "deals_damage": "yes"
+                    }
+                ]
+            },
+            "minecraft:equipment": {
+                "table":"loot_tables/woodcutter.json"
+            },
+            "minecraft:variant":{
+                "value": 0
+            },
+            "minecraft:behavior.look_at_player": {
+                "priority": 7,
+                "look_distance": 6.0,
+                "probability": 0.02
+              }
+            }
+        }
+    }
+}

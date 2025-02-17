@@ -1,0 +1,30 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:recipe_shaped": {
+        "description": {
+            "identifier":"nox:woodcutter-manager-oak"
+        },
+        "tags": [
+            "nox:npc_management_table"
+        ],
+        "pattern":[
+            "LLL",
+            "LPL",
+            "LLL"
+        ],
+        "key": {
+            "L":{
+                "tag": "minecraft:logs"
+            },
+            "P":{
+                "tag": "minecraft:planks"
+            }
+        },
+        "result":{
+            "item":"nox:woodcutter-manager"
+        },
+        "unlock": {
+            "context": "AlwaysUnlocked"
+        }
+    }
+}

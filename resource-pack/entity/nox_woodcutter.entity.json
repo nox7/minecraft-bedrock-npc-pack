@@ -1,0 +1,39 @@
+{
+    "format_version": "1.12.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "nox:woodcutter",
+            "spawn_egg": {
+                "base_color": "#505152",
+                "overlay_color": "#3b9dff"
+            },
+            "render_controllers": [
+                "controller.render.nox_woodcutter"
+            ],
+            "geometry": {
+                "default": "geometry.nox_woodcutter"
+            },
+            "textures": {
+                "variant_1": "textures/entity/woodcutter_1"
+            },
+            "materials": {
+                "default": "entity"
+            },
+            "animations":{
+                "look_at_target": "animation.humanoid.look_at_target.default",
+                "move":"animation.humanoid.move",
+                "woodcutting":"animation.woodcutter.chop"
+            },
+            "scripts":{
+                "pre_animation": [
+                    "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
+                ],
+                "animate": [
+                    {"look_at_target": "!query.property('nox:is_chopping') && !query.property('nox:is_moving')"},
+                    {"woodcutting": "query.property('nox:is_chopping')"},
+                    {"move":"query.is_on_ground"}
+                ]
+            }
+        }
+    }
+}

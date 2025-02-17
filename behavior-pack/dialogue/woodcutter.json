@@ -1,0 +1,57 @@
+{
+    "format_version": "1.20.41",
+    "minecraft:npc_dialogue": {
+        "scenes": [
+            {
+                "scene_tag": "woodcutter_new_intro",
+                "npc_name": "Woodcutter",
+                "text": "Looks like you and I haven't met. There's a lot to say about me, but most of it revolves around chopping wood. That's what I do. I chop wood.",
+                "buttons": [
+                    {
+                        "name": "Faster please?",
+                        "commands": [
+                            "/dialogue open @e[type=nox:woodcutter,r=1] @initiator woodcutter_faster_1",
+                            "/dialogue change @e[type=nox:woodcutter,r=1] woodcutter_known_intro @initiator"
+                        ]
+                    },
+                    {
+                        "name": "Is it satisfying?",
+                        "commands": [
+                            "/dialogue open @e[type=nox:woodcutter,r=1] @initiator woodcutter_satisfying_1",
+                            "/dialogue change @e[type=nox:woodcutter,r=1] woodcutter_known_intro @initiator"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "woodcutter_known_intro",
+                "npc_name": "Woodcutter",
+                "text": "Hey, it's you again. Back in the neck of the woods.",
+                "buttons": [
+                    {
+                        "name": "Faster please?",
+                        "commands": [
+                            "/dialogue open @e[type=nox:woodcutter,r=1] @initiator woodcutter_faster_1"
+                        ]
+                    },
+                    {
+                        "name": "Is it satisfying?",
+                        "commands": [
+                            "/dialogue open @e[tag=derek_edge] @initiator woodcutter_satisfying_1"
+                        ]
+                    }
+                ]
+            },
+            {
+                "scene_tag": "woodcutter_faster_1",
+                "npc_name": "Woodcutter",
+                "text": "Oh, I'm sorry. Why don't you try chopping the trees yourself then?"
+            },
+            {
+                "scene_tag": "woodcutter_satisfying_1",
+                "npc_name": "Woodcutter",
+                "text": "It's kind of what I live for, so yes. You can go build your blocks, and I'll make the trees disappear. Until I replant them."
+            }
+        ]
+    }
+}

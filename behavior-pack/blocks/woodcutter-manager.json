@@ -1,0 +1,25 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "nox:woodcutter-manager",
+            "menu_category": {
+                "category": "items",
+                "group": "itemGroup.name.craftingTables",
+                "is_hidden_in_commands": false
+            }
+        },
+        "components": {
+            "tag:wood":{},
+            "minecraft:geometry":{
+                "identifier": "geometry.nox.woodcutter-manager"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "nox-woodcutter-manager",
+                    "render_method": "opaque"
+                }
+            }
+        }
+    }
+}

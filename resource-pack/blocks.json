@@ -1,0 +1,6 @@
+{
+    "format_version":"1.20.41",
+    "nox:woodcutter-manager":{
+        "sound": "wood"
+    }
+}

@@ -1,0 +1,4 @@
+entity.nox:woodcutter.name=Woodsman
+item.spawn_egg.entity.nox:villager.name=Spawn Nox Woodcutter
+tile.nox:woodcutter-manager.name=Woodcutter Manager
+tile.nox:npc_management_table.name=NPC Management Table
