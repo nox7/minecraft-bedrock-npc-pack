@@ -22,7 +22,7 @@ import { LogLevel } from "./Debug/LogLevel.js";
 import { NPCHandler } from "./NPCHandler.js";
 import { PlayerDebounceManager } from "./Utilities/PlayerDebounceManager.js";
 
-Debug.LogLevel = LogLevel.Info;
+Debug.LogLevel = LogLevel.None;
 
 const npcHandler = new NPCHandler();
 system.runInterval(() => {
