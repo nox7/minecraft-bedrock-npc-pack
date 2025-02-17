@@ -2,10 +2,10 @@
     "format_version": "1.20.50",
     "minecraft:recipe_shaped": {
         "description": {
-            "identifier":"nox:woodcutter-manager-oak"
+            "identifier":"nox:woodcutter-manager"
         },
         "tags": [
-            "nox:npc_management_table"
+            "nox:npc-management-table"
         ],
         "pattern":[
             "LLL",

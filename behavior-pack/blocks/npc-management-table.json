@@ -1,0 +1,69 @@
+{
+    "format_version": "1.20.50",
+    "minecraft:block": {
+        "description": {
+            "identifier": "nox:npc-management-table",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits":{
+                "minecraft:placement_direction":{
+                    "enabled_states":["minecraft:cardinal_direction"]
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'north'",
+                "components":{
+                    "minecraft:transformation": {
+                        "rotation": [0,180,0]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'south'",
+                "components":{
+                    "minecraft:transformation": {
+                        "rotation": [0,0,0]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'east'",
+                "components":{
+                    "minecraft:transformation": {
+                        "rotation": [0,90,0]
+                    }
+                }
+            },
+            {
+                "condition": "query.block_state('minecraft:cardinal_direction') == 'west'",
+                "components":{
+                    "minecraft:transformation": {
+                        "rotation": [0,-90,0]
+                    }
+                }
+            }
+        ],
+        "components": {
+            "minecraft:destructible_by_mining":{
+                "seconds_to_destroy": 2
+            },
+            "minecraft:geometry":{
+                "identifier": "geometry.nox.npc-management-table"
+            },
+            "minecraft:crafting_table": {
+                "crafting_tags": ["nox:npc-management-table"],
+                "table_name": "NPC Management Table"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "nox-npc-management-table",
+                    "render_method": "opaque"
+                }
+            },
+            "tag:wood":{}
+        }
+    }
+}
