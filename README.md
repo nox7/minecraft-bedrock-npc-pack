@@ -23,7 +23,7 @@ You can now enable this behavior pack in your local Minecraft Bedrock Edition ga
 ## NPCs in Survival
 All NPCs in this add-on have their own dedicated spawning blocks. These blocks must be crafted from the **NPC Spawn Table**. You can make this table by crafting the following recipe at any crafting table.
 
-![Crafting recipe for NPC Management Table](github-images/management-table-recipe.png)
+![Crafting recipe for NPC Management Table](.github/images/management-table-recipe.png)
 
 ## List of NPCs
 These are the NPCs included in this pack so far.
@@ -35,4 +35,4 @@ You can right-click the placement-block (Woodcutting Manager block) to configure
 
 To spawn a woodcutter in survival, build the Woodcutter Manager block with the below recipe at the NPC Spawn Table (it can use any logs and planks combination).
 
-![Crafting recipe for Woodcutter Management](github-images/woodcutter-management-table-recipe.png)
+![Crafting recipe for Woodcutter Management](.github/images/woodcutter-management-table-recipe.png)
