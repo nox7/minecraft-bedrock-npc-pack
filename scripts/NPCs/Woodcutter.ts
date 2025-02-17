@@ -157,7 +157,7 @@ export class Woodcutter extends NPC{
             if (dialogInitiated !== undefined){
                 Debug.Info("Checking dialog initiated");
                 let dialogInitiatedBool: boolean = <boolean>dialogInitiated;
-                console.warn(dialogInitiatedBool);
+                
                 if (!dialogInitiatedBool){
                     Debug.Info("Initiating woodcutter dialog.");
                     entity.setProperty("nox:dialog_initiated", true);
