@@ -1,18 +1,18 @@
 {
-    "format_version": 2,
-    "header": {
-      "name": "Bedrock NPC Pack",
-      "description": "Resource files for the NPC Pack behavior pack",
-      "uuid":"7921902f-d909-49f4-9c69-946535f94e9a",
-      "version": [1, 0, 0],
-      "min_engine_version": [1, 21, 0]
-     },
-    "modules": [
-      {
-        "description": "Bedrock NPC Pack",
-        "type": "resources",
-        "uuid": "0e50c6b2-f54a-4491-84cb-8c8a7a8fed43",
-        "version": [1, 0, 0]
-      }
-    ]
-   }
+  "format_version": 2,
+  "header": {
+    "name": "Bedrock NPC Pack - Resources",
+    "description": "Resource files for the NPC Pack behavior pack",
+    "uuid":"7921902f-d909-49f4-9c69-946535f94e9a",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 21, 0]
+  },
+  "modules": [
+    {
+      "description": "Bedrock NPC Pack",
+      "type": "resources",
+      "uuid": "0e50c6b2-f54a-4491-84cb-8c8a7a8fed43",
+      "version": [1, 0, 0]
+    }
+  ]
+}
