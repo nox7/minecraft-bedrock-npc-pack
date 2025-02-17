@@ -35,4 +35,4 @@ You can right-click the placement-block (Woodcutting Manager block) to configure
 
 To spawn a woodcutter in survival, build the Woodcutter Manager block with the below recipe at the NPC Spawn Table (it can use any logs and planks combination).
 
-![Crafting recipe for Woodcutter Management](woodcutter-management-table-recipe.png)
+![Crafting recipe for Woodcutter Management](github-images/woodcutter-management-table-recipe.png)
