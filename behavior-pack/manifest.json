@@ -30,5 +30,10 @@
             "uuid": "7921902f-d909-49f4-9c69-946535f94e9a",
             "version": [1, 0, 0]
         }
-    ]
+    ],
+    "metadata": {
+        "authors": ["Cole Green (@nox7)"],
+        "license": "APACHE",
+        "url": "https://github.com/nox7/minecraft-bedrock-npc-pack"
+    }
 }
