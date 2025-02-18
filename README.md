@@ -5,16 +5,19 @@ For use with `@minecraft/server@2.0.0-alpha`
 
 ## Using in a Local Minecraft World
 Download this repository and verify you have Node and NPM installed into your command-line.
-```
+```ps
 node --version
 ```
-```
+```ps
 npm -v
 ```
 
-Once both those commands work properly, CD into the root of this project and run the following command.
+Once both those commands work properly, CD into the root of this project and run the following commands.
 
+```ps
+npm i
 ```
+```ps
 npx gulp build && npx gulp deploy_localmc
 ```
 
