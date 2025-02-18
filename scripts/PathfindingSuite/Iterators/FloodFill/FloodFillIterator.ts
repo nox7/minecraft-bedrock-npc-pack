@@ -58,7 +58,7 @@ export class FloodFillIterator {
 
         // Enqueue the first blocks
         for (const block of this.IterateAdjacentPassableBlocks(startingBlock)){
-            if (block !== null){
+            if (block !== null && block.isValid){
                 this.Queue.Enqueue(block);
             }
         }
@@ -320,7 +320,7 @@ export class FloodFillIterator {
                 if (block.isValid){
                     const adjacentBlocks: Block[] = [];
                     for (const iteratedBlock of this.IterateAdjacentPassableBlocks(block)){
-                        if (iteratedBlock !== null){
+                        if (iteratedBlock !== null && iteratedBlock.isValid){
                             adjacentBlocks.push(iteratedBlock);
                         }
                         yield null;
