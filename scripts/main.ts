@@ -1,7 +1,6 @@
 import {
     world,
     system,
-    ItemUseOnBeforeEvent,
     Player,
     PlayerPlaceBlockAfterEvent,
     Block,
@@ -14,6 +13,7 @@ import {
     PlayerBreakBlockBeforeEvent,
     PlayerInteractWithBlockBeforeEvent,
     ContainerSlot,
+    ItemStartUseOnAfterEvent,
 } from "@minecraft/server";
 import { WoodcutterManagerBlock } from "./BlockHandlers/WoodcutterManagerBlock.js";
 import { Woodcutter } from "./NPCs/Woodcutter.js";
@@ -52,16 +52,17 @@ world.beforeEvents.playerBreakBlock.subscribe(async (event: PlayerBreakBlockBefo
     }
 });
 
-world.beforeEvents.itemUseOn.subscribe((itemUseOnBeforeEvent: ItemUseOnBeforeEvent) => {
-    if (itemUseOnBeforeEvent.block.permutation.matches("nox:woodcutter-manager")) {
-        const player: Player = itemUseOnBeforeEvent.source;
+world.beforeEvents.playerInteractWithBlock.subscribe((e: PlayerInteractWithBlockBeforeEvent) => {
+    console.log("A");
+    if (e.block.permutation.matches("nox:woodcutter-manager")) {
+        const player: Player = e.player;
         if (player.isSneaking) {
             // Do nothing, let them act normally on this block
             // world.sendMessage("IS SNEAKING");
         } else {
             // Cancel whatever the player tried to do on this
             // world.sendMessage("Is woodcutter");
-            itemUseOnBeforeEvent.cancel = true;
+            e.cancel = true
         }
     }
 });

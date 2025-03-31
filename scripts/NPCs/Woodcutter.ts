@@ -371,6 +371,7 @@ export class Woodcutter extends NPC{
             // Increment the world's next_woodcutter_id
             world.setDynamicProperty("nox:next_woodcutter_id", Number(nextWoodcutterId) + 1);
     
+            // @ts-ignore
             this.Entity = this.Dimension.spawnEntity(Woodcutter.ENTITY_NAME, location);
             this.Entity.setProperty("nox:id", Number(nextWoodcutterId));
             this.Entity.setProperty("nox:woodcutter_manager_block_location_x", this.WoodcutterManagerBlock!.GetBlock().location.x);

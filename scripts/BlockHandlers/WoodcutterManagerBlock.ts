@@ -59,9 +59,16 @@ export class WoodcutterManagerBlock{
 
                 const modalForm = new ModalFormData();
                 modalForm.title("Woodcutter Settings");
-                modalForm.toggle("Is active", currentIsEnabled);
-                modalForm.slider("Search distance", 5, 20, 1, currentMaxSearchDistance);
-                modalForm.toggle("Strips logs", currentDoesStripLogs);
+                modalForm.toggle("Is active", {
+                    defaultValue: currentIsEnabled
+                });
+                modalForm.slider("Search distance", 5, 20, {
+                    defaultValue: currentMaxSearchDistance,
+                    valueStep: 1
+                });
+                modalForm.toggle("Strips logs", {
+                    defaultValue: currentDoesStripLogs
+                });
                 const response = await modalForm.show(player);
 
                 if (response.formValues !== undefined){
